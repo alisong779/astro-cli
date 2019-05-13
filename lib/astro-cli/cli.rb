@@ -1,10 +1,6 @@
-class CommandLine 
+class CLI  
  
-  def initialize
-   
-  end 
-  
-  def call 
+  def run 
     input = ""
       puts "Hello There! Welcome to Astro Land!"
       puts "To find out what your Astrological Sign is, enter 'sign'."
@@ -27,7 +23,7 @@ class CommandLine
   
     def astro_signs
       puts "Enter the number for the range that includes your birthday:"
-      input = gets.strip
+      # input = gets.strip
       #   puts "#{date}: #{sign}"
        #if else statment - calling the appropriate sign numbers from Signs #class.
       #call -  
