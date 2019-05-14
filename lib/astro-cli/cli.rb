@@ -5,7 +5,7 @@ class CLI
       puts "Hello There! Welcome to Astro Land!"
       puts "To find out what your Astrological Sign is, enter 'sign'."
       puts "To learn about the specific traits of your Astrological Sign, enter 'traits'."
-      puts "To read your daily horoscope, enter 'horoscope'."
+      puts "To learn about the planet that rules your life, type 'planet'."
       puts "To quit, type 'exit'."
       puts "What would you like to do?"
     Scraper.scrape_signs
@@ -36,10 +36,10 @@ class CLI
       #call 
       end 
    
-  def horoscope
+  def planet
     # puts "Enter the number of your astrological sign:"
     # puts "a list of astrological signs"
-      #puts "#{scraped data for horoscope}"
+      #puts "#{scraped data for planet}"
       #call 
   end 
 end 
