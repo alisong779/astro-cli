@@ -1,6 +1,6 @@
 class Scraper 
   
-  def scrape_signs
+  def self.scrape_signs
     html = open("https://www.astrology.com/astrology-101")
     doc = Nokogiri::HTML(html)
     binding.pry 
@@ -10,8 +10,8 @@ class Scraper
   #Aries = doc.css("icon-aries-symbol").text 
  
   
-  def scrape_traits
-    html = open(https://www.astrology.com/astrology-101/zodiac-signs/aries)
+  def self.scrape_traits
+    html = open("https://www.astrology.com/astrology-101/zodiac-signs/aries")
     doc = Nokogiri::HTML(html)
- 
+ end 
 end 

@@ -8,7 +8,7 @@ class CLI
       puts "To read your daily horoscope, enter 'horoscope'."
       puts "To quit, type 'exit'."
       puts "What would you like to do?"
-    
+    Scraper.scrape_signs
         until input == "exit"
         input = gets.strip
         if input == "sign"
@@ -42,3 +42,5 @@ class CLI
       #puts "#{scraped data for horoscope}"
       #call 
   end 
+end 
+
