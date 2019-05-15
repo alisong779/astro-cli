@@ -14,20 +14,28 @@ class Scraper
       
     doc.css(".zodiac-101-links")[0].css(".grid-new.grid-4")[1].css("a").each do |planet|
       new_planet = Planet.new 
+      new_sign.planet = planet.text.strip
       new_planet.name = planet.text.strip
       new_planet.url = planet.attribute("href").value.strip  
     end 
   end 
   
   def self.scrape_sign_traits
-    html = open(Sign.url)
+    html = open("https://www.astrology.com/astrology-101/zodiac-signs/aries")
     doc = Nokogiri::HTML(html)
-    doc.css(".body")[0].css("p")[2].text
+      binding.pry 
+    sign_traits = doc.css(".body")[0].css("p")[2].each do |trait|
+       trait.text.strip
+    sign_dates = doc.css(".body")[0].css("p")[1].each do |dates|
+      dates.split" "
+    end 
+    end 
+    # [2].text
   end
     
-  def self.scrape_planet_deets
-    html = open(Planet.url)
-    doc = Nokogiri::HTML(html)
-    doc.css(".body").css("p")[0..10].text 
-  end 
+  # def self.scrape_planet_deets
+  #   html = open(Planet.url)
+  #   doc = Nokogiri::HTML(html)
+  #   doc.css(".body").css("p")[0..10].text 
+  # end 
 end 
