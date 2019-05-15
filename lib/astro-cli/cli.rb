@@ -25,13 +25,15 @@ class CLI
   end 
   
     
-    def astro_signs
-      
-      # input = ""
-      # puts "Enter the number of the date range that includes your birthday:"
-      #puts a list of astrological signs with dates (scraped data) OR
-      # use if else statment - calling the appropriate sign numbers from Signs #class.
+  def astro_signs
+    input = ""
+    puts "Please enter the number for your sign:"
+    Sign.all.each_with_index do |sign, index|
+        puts "#{index+1}. #{sign.name}"
       end 
+  end 
+      # use if else statment - calling the appropriate sign numbers from Signs #class.
+     
     
     def astro_traits
       # input = ""
@@ -45,6 +47,6 @@ class CLI
       # puts a list of astrological signs with dates (scraped date)
       #puts "pick your sign from the list"
       #calls on the correct planet details - associated with the sign 
-  end 
+    end 
 end 
 
