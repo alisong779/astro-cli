@@ -1,5 +1,5 @@
-class Planets 
-  attr_accessor :name :description 
+class Planet
+  attr_accessor :name, :description, :url  
   
   @@all = []
   
@@ -10,3 +10,4 @@ class Planets
   def self.all 
     @@all 
   end 
+end 

@@ -25,7 +25,7 @@ class CLI
   
     
     def astro_signs
-      puts Scraper.scrape_planets
+      Scraper.scrape_signs_and_planets
       # input = ""
       # puts "Enter the number of the date range that includes your birthday:"
       #puts a list of astrological signs with dates (scraped data) OR
@@ -41,7 +41,7 @@ class CLI
    
     def astro_planets
       # input = ""
-      # uts a list of astrological signs with dates (scraped date)
+      # puts a list of astrological signs with dates (scraped date)
       #puts "pick your sign from the list"
       #calls on the correct planet details - associated with the sign 
   end 

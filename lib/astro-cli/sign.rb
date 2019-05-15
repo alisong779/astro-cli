@@ -1,5 +1,5 @@
-class Signs
-  attr_accessor :name :traits
+class Sign
+  attr_accessor :name, :traits, :url 
   
   @@all = []
   def initialize
