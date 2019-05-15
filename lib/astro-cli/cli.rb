@@ -15,8 +15,8 @@ class CLI
           astro_signs
         elsif input == "traits"
           astro_traits
-        elsif input == "horoscope"
-          horoscope
+        elsif input == "planet"
+          astro_planets
         else
           puts "Please enter a valid choice:"
       end 
@@ -26,25 +26,24 @@ class CLI
     
     def astro_signs
       puts Scraper.scrape_sign_names
-      # puts "Enter the number for the range that includes your birthday:"
-      # input = gets.strip
-      #   puts "#{date}: #{sign}"
-       #if else statment - calling the appropriate sign numbers from Signs #class.
-      #call -  
+      # input = ""
+      # puts "Enter the number of the date range that includes your birthday:"
+      #puts a list of astrological signs with dates (scraped data) OR
+      # use if else statment - calling the appropriate sign numbers from Signs #class.
       end 
     
     def astro_traits
-      # puts "Enter the number of your astrological sign:"
-      # puts "a list of astrological signs"
-      #puts "#{scraped data for sign traits}"
-      #call 
+      # input = ""
+      # puts a list of astrological signs with dates (scraped data)
+      # puts pick your sign from the list 
+      # calls on the correct sign traits from sign class
       end 
    
-  def planet
-    # puts "Enter the number of your astrological sign:"
-    # puts "a list of astrological signs"
-      #puts "#{scraped data for planet}"
-      #call 
+    def astro_planets
+      # input = ""
+      # uts a list of astrological signs with dates (scraped date)
+      #puts "pick your sign from the list"
+      #calls on the correct planet details - associated with the sign 
   end 
 end 
 
