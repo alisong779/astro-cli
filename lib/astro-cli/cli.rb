@@ -1,10 +1,10 @@
 class CLI  
  
   def run 
-      Scraper.scrape_signs_and_planets
       binding.pry 
       input = ""
-      puts "Hello There! Welcome to Astro Land!"
+      puts "Hello There! Welcome to your Astrology Source!"
+      Scraper.scrape_signs_and_planets
       puts "To find out what your Astrological Sign is, enter 'sign'."
       puts "To learn about the specific traits of your Astrological Sign, enter 'traits'."
       puts "To learn about the planet that rules your life, type 'planet'."
