@@ -3,7 +3,7 @@ class CLI
   def run 
     input = ""
     puts "Hello There! Welcome to your Astrology Source!"
-    Scraper.scrape_signs_and_planets
+    Scraper.scrape_sign_traits
     puts "To find out what your Astrological Sign is, enter 'sign'."
     puts "To learn about the specific traits of your Astrological Sign, enter 'traits'."
     puts "To learn about the planet that rules your life, type 'planet'."
