@@ -8,7 +8,7 @@ class CLI
       puts "To learn about the planet that rules your life, type 'planet'."
       puts "To quit, type 'exit'."
       puts "What would you like to do?"
-    Scraper.scrape_signs
+  
         until input == "exit"
         input = gets.strip
         if input == "sign"
@@ -17,12 +17,16 @@ class CLI
           astro_traits
         elsif input == "horoscope"
           horoscope
+        else
+          puts "Please enter a valid choice:"
       end 
         end 
   end 
   
+    
     def astro_signs
-      puts "Enter the number for the range that includes your birthday:"
+      puts Scraper.scrape_sign_names
+      # puts "Enter the number for the range that includes your birthday:"
       # input = gets.strip
       #   puts "#{date}: #{sign}"
        #if else statment - calling the appropriate sign numbers from Signs #class.

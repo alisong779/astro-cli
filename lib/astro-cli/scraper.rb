@@ -1,20 +1,15 @@
 class Scraper 
   
-  def self.scrape_signs
+  def self.get_page
     html = open("https://www.astrology.com/astrology-101")
     doc = Nokogiri::HTML(html)
-    
+    # binding.pry 
   end 
   
-  def scrape_sign_names
-      html = open("https://www.astrology.com/astrology-101")
-      doc = Nokogiri::HTML(html)
-      doc.css(".zodiac-101-links")[0].css(".grid-new.grid-4")[0].css("a")[0].text
-      # binding.pry 
+  def self.scrape_sign_names
+      sign_name = get_page.css(".zodiac-101-links")[0].css(".grid-new.grid-4")[0].css("a")[0].text
+      #only puts out 1 sign 
+      
+      #doc.css(".zodiac-101-links")[0].css(".grid-new.grid-4")[0].css("a")[0].text
   end 
 end 
-#   def self.scrape_traits
-#     html = open("https://www.astrology.com/astrology-101")
-#     doc = Nokogiri::HTML(html)
-# end 
-# end 
