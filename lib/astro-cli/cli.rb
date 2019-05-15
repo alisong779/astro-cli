@@ -1,7 +1,9 @@
 class CLI  
  
   def run 
-    input = ""
+      Scraper.scrape_signs_and_planets
+      binding.pry 
+      input = ""
       puts "Hello There! Welcome to Astro Land!"
       puts "To find out what your Astrological Sign is, enter 'sign'."
       puts "To learn about the specific traits of your Astrological Sign, enter 'traits'."
@@ -9,7 +11,7 @@ class CLI
       puts "To quit, type 'exit'."
       puts "What would you like to do?"
   
-        until input == "exit"
+      until input == "exit"
         input = gets.strip
         if input == "sign"
           astro_signs
@@ -18,14 +20,14 @@ class CLI
         elsif input == "planet"
           astro_planets
         else
-          puts "Please enter a valid choice:"
+          puts "Please enter a valid choice:" 
       end 
-        end 
+    end 
   end 
   
     
     def astro_signs
-      Scraper.scrape_signs_and_planets
+      
       # input = ""
       # puts "Enter the number of the date range that includes your birthday:"
       #puts a list of astrological signs with dates (scraped data) OR
