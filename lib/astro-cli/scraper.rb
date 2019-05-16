@@ -20,20 +20,20 @@ class Scraper
     end 
   end 
   
-  def self.scrape_sign_traits
+  def self.scrape_sign_traits(new_sign)
     html = open(new_sign.url)
     doc = Nokogiri::HTML(html)
-    sign_traits = doc.css(".body")[0].css("p")[2].each do |trait|
-       trait.text.strip
-    end
-    sign_dates = doc.css(".body")[0].css("p")[1].each do |dates|
-      dates.text.strip
-    end 
+    
+    new_sign.traits = doc.css(".body")[0].css("p")[2]
+  
+    new_sign.dates = doc.css(".body")[0].css("p")[1]
+    binding.pry 
   end
     
-  # def self.scrape_planet_deets
-  #   html = open(Planet.url)
+  # def self.scrape_planet_deets(new_planet)
+  #   html = open(new_planet.url)
   #   doc = Nokogiri::HTML(html)
-  #   planet_details = doc.css(".body").css("p")[0].text 
+  
+  #   new_planet.details = doc.css(".body").css("p")[0].text 
   # end 
 end 
