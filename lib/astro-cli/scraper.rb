@@ -19,15 +19,6 @@ class Scraper
       new_planet.name = planet.text.strip
       new_planet.url = planet.attribute("href").value.strip
     end 
-      
-  def self.scrape_sign_traits(new_sign)       
-    html = open(new_sign.url)
-    doc = Nokogiri::HTML(html)
-    
-    new_sign.traits = doc.css(".body")[0].css("p")[2]
-  
-    new_sign.dates = doc.css(".body")[0].css("p")[1]
-     binding.pry 
   end 
     
                                                 #associating the planet, traits and dates to the sign?
@@ -36,20 +27,19 @@ class Scraper
                                                 #should I split / index on scraper or object methods?
   
   
-#   def self.scrape_sign_traits(new_sign)       
-#     html = open(new_sign.url)
-#     doc = Nokogiri::HTML(html)
+  def self.scrape_sign_traits(new_sign)       
+    html = open(new_sign.url)
+    doc = Nokogiri::HTML(html)
     
-#     new_sign.traits = doc.css(".body")[0].css("p")[2]
-  
-#     new_sign.dates = doc.css(".body")[0].css("p")[1]
-#     binding.pry 
-#   end
+    new_sign.traits = doc.css(".body")[0].css("p")[2]
+    new_sign.dates = doc.css(".body")[0].css("p")[1]
+    binding.pry 
+  end
     
-#   def self.scrape_planet_deets(new_planet)
-#     html = open(new_planet.url)
-#     doc = Nokogiri::HTML(html)
+  def self.scrape_planet_deets(new_planet)
+    html = open(new_planet.url)
+    doc = Nokogiri::HTML(html)
   
-#     new_planet.details = doc.css(".body").css("p")[0].text 
-#   end 
-# end 
+    new_planet.details = doc.css(".body").css("p")[0].text 
+  end 
+end 
