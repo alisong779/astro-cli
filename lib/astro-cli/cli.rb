@@ -3,7 +3,7 @@ class CLI
   def run 
     input = ""
     puts "Hello There! Welcome to your Astrology Source!"
-    Scraper.scrape_sign_traits
+    Scraper.scrape_signs_and_planets
     puts "To find out what your Astrological Sign is, enter 'sign'."
     puts "To learn about the specific traits of your Astrological Sign, enter 'traits'."
     puts "To learn about the planet that rules your life, type 'planet'."
@@ -26,28 +26,26 @@ class CLI
   
     
   def astro_signs
-    input = ""
-    puts "Please enter the number for your sign:"
-    Sign.all.each_with_index do |sign, index|
-        puts "#{index+1}. #{sign.name}"
-      end 
+    #Sign.all.each do |name|
+        #puts "#{name} - #{Sign.dates}"
+      # puts all signs with dates
+      # puts out the menu again
   end 
-      # associates input to correct sign instance by name 
-     
-    
-    def astro_traits
+      
+  def astro_traits
       # input = ""
-      # puts all signs with dates, ask user to pick sign:
-      # associates user input to the correct sign instance by name (if input == 1 , call sign instance with name aries)
-      # puts the traits attribute for the correct sign instance (aries.traits)
+      # puts all signs with dates, ask user to enter sign name 
+      # compare input to all signs, find the sign instance with the name attr that matches the input, then puts the sign.traits: 
+        #find_by_name
       # puts out the menu again 
-      end 
+    end 
    
     def astro_planets
       # input = ""
-      # puts all signs
-      #associates user input to the correct planet instance 
-      #puts the details attribute for the correct planet instance 
+      # puts all signs with dates, ask user to enter the sign name 
+      #find_by_name used to find the sign instance that matches input
+      #puts sign.planet 
+      #puts planet.details - must associate with previous step 
       #puts out the menu again
     end 
 end 

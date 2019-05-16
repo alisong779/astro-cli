@@ -12,4 +12,4 @@ class Planet
   end 
 end 
 
-#each instance needs to know its details and which Sign it belongs to and 
+#each instance needs to know its details and which Sign it belongs to 
