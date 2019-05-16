@@ -28,26 +28,27 @@ class CLI
     
   def astro_signs
     #Sign.all.each do |name|
-      # puts "#{name} - #{Sign.dates}"
+      # puts "#{name.name} - #{name.dates}"
       # puts all signs with dates
-      # puts out the menu again
+      # run 
   end 
       
   def astro_traits
       # input = ""
-      # puts all signs with dates, ask user to enter sign name 
-      # compare input to all signs, find the sign instance with the name attr that matches the input, then puts the sign.traits: 
-        #find_by_name
-      # puts out the menu again 
+      #Sign.all.each do |name|
+      # puts "#{name.name} - #{name.dates}"
+      #puts "Enter the name of your sign:"
+        #Scraper.scrape_sign_traits(input)
+      # run 
     end 
    
     def astro_planets
       # input = ""
-      # puts all signs with dates, ask user to enter the sign name 
-      #find_by_name used to find the sign instance that matches input
-      #puts sign.planet 
-      #puts planet.details - must associate with previous step 
-      #puts out the menu again
+      #Sign.all.each do |name|
+      # puts "#{name.name} - #{name.dates}"
+      #puts "Enter the name of your sign:"
+      #Scraper.scrape_planet_deets(input)
+      #run 
     end 
 end 
 

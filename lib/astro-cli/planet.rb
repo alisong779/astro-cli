@@ -14,7 +14,6 @@ class Planet
   def self.find_by_name(name)
     Planet.all.find {|p| name == p.name}
   end 
-  
 end 
 
 
