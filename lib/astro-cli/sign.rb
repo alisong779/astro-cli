@@ -10,5 +10,6 @@ class Sign
     @@all 
   end 
   
+  #each instance needs to know its planet, dates and traits
   
 end 

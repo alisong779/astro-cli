@@ -1,5 +1,5 @@
 class Planet
-  attr_accessor :name, :description, :url  
+  attr_accessor :name, :details, :url  
   
   @@all = []
   
@@ -11,3 +11,5 @@ class Planet
     @@all 
   end 
 end 
+
+#each instance needs to know its details and which Sign it belongs to and 

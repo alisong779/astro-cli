@@ -32,21 +32,23 @@ class CLI
         puts "#{index+1}. #{sign.name}"
       end 
   end 
-      # use if else statment - calling the appropriate sign numbers from Signs #class.
+      # associates input to correct sign instance by name 
      
     
     def astro_traits
       # input = ""
-      # puts a list of astrological signs with dates (scraped data)
-      # puts pick your sign from the list 
-      # calls on the correct sign traits from sign class
+      # puts all signs with dates, ask user to pick sign:
+      # associates user input to the correct sign instance by name (if input == 1 , call sign instance with name aries)
+      # puts the traits attribute for the correct sign instance (aries.traits)
+      # puts out the menu again 
       end 
    
     def astro_planets
       # input = ""
-      # puts a list of astrological signs with dates (scraped date)
-      #puts "pick your sign from the list"
-      #calls on the correct planet details - associated with the sign 
+      # puts all signs
+      #associates user input to the correct planet instance 
+      #puts the details attribute for the correct planet instance 
+      #puts out the menu again
     end 
 end 
 

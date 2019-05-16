@@ -21,21 +21,19 @@ class Scraper
   end 
   
   def self.scrape_sign_traits
-    html = open("https://www.astrology.com/astrology-101/zodiac-signs/aries")
+    html = open(new_sign.url)
     doc = Nokogiri::HTML(html)
-      binding.pry 
     sign_traits = doc.css(".body")[0].css("p")[2].each do |trait|
        trait.text.strip
+    end
     sign_dates = doc.css(".body")[0].css("p")[1].each do |dates|
-      dates.split" "
+      dates.text.strip
     end 
-    end 
-    # [2].text
   end
     
   # def self.scrape_planet_deets
   #   html = open(Planet.url)
   #   doc = Nokogiri::HTML(html)
-  #   doc.css(".body").css("p")[0..10].text 
+  #   planet_details = doc.css(".body").css("p")[0].text 
   # end 
 end 
