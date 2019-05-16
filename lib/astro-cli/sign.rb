@@ -11,5 +11,6 @@ class Sign
   end 
   
   #each instance needs to know its planet, dates and traits
+  #each sign belongs to a planet
   
 end 
