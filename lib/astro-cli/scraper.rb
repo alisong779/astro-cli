@@ -31,14 +31,15 @@ class Scraper
     
     sign.traits = doc.css(".body")[0].css("p")[2].text 
     sign.dates = doc.css(".body")[0].css("p")[1].children[1].text.strip
-    sign.planet = Planet.find_by_name
+    name = doc.css(".body")[0].css("p")[1].children[13].text.strip
+    sign.planet = Planet.find_by_name(name)
+  
     
   end
     
   def self.scrape_planet_deets(planet)
     html = open(planet.url)
     doc = Nokogiri::HTML(html)
-  binding.pry 
     planet.details = doc.css(".body").css("p")[0].children[0].text 
   end 
 end 
