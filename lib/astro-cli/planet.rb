@@ -16,11 +16,8 @@ class Planet
   end
   
   def scrape_planets(planet) 
-     Scraper.scrape_planet_deets(planet)
-      Planet.all.each {|planet| puts planet.details}
+    Scraper.scrape_planet_deets(planet)
+    Planet.all.each {|planet| puts planet.details}
   end 
 end 
 
-
-
-#each instance needs to know its details and which Sign it belongs to 
