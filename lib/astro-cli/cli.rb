@@ -30,8 +30,13 @@ class CLI
       puts "Enter the name of your sign:"
       input = gets.capitalize.strip
       name = input 
-      sign = Sign.all.name  
-      Scraper.scrape_sign_traits(sign)
+      
+      sign = Sign.all.collect {|obj| obj}
+      binding.pry 
+      
+      sign.each do |traits|
+        Scraper.scrape_sign_traits(sign)
+      end 
         puts "#{name} traits: #{sign.traits}" 
     end 
     
