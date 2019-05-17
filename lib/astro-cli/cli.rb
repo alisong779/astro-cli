@@ -48,7 +48,12 @@ class CLI
     end 
  
     def print_sign(sign)
-      puts "Sign Details: #{sign.traits}"
+      puts "Sign Details: 
+      #{sign.name}
+      #{sign.dates}
+      #{sign.traits}
+      #{sign.planet}
+      ".blue
     end 
     
     def list_signs
@@ -56,11 +61,27 @@ class CLI
           puts "#{index} - #{sign.name}"          
         end 
     end 
-   
-    def planet_details 
-      #same as sign_details 
-      puts "Planet Details:"
+    
+    def list_planets
+        Planet.all.each.with_index(1) do |planet, index|
+          puts "#{index} - #{planet.name}"
+        end
     end 
+    
+    def planet_details 
+      list_planets
+      puts "Please type the number of your planet:"
+      input = gets.strip.to_i 
+      planet = Planet.all[input-1]
+      Scraper.scrape_planet_deets(planet) if planet.details == nil
+      print_planet_details(planet)
+    end 
+    
+    def print_planet_details(planet)
+      puts "Planet Details:
+      #{planet.details}"
+    end 
+      
     
     def sub_menu
       input = nil 
