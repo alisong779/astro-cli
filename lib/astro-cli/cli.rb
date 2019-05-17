@@ -79,7 +79,7 @@ class CLI
     
     def print_planet_details(planet)
       puts "Planet Details:
-      #{planet.details}"
+      #{planet.details}".green
     end 
       
     
