@@ -18,38 +18,35 @@ class CLI
         astro_traits
       elsif input == "planet"
         astro_planets
-      else
+      else 
         puts "Please enter a valid choice:" 
       end 
     end 
   end 
   
     
-  def astro_signs
+  def astro_traits
+      input = ""
+      puts "Enter the name of your sign:"
+      input = gets.capitalize.strip
+      name = input 
+      sign = Sign.all.name  
+      Scraper.scrape_sign_traits(sign)
+        puts "#{name} traits: #{sign.traits}" 
+    end 
+    
+    def astro_signs
     Sign.all.each do |name|
       puts "#{name.name} - #{name.dates}"
     end 
   end 
-      
-  def astro_traits
-      input = ""
-      puts "Enter the name of your sign:"
-      input = gets.strip
-        
-      Scraper.scrape_sign_traits(input)
-      Sign.all.each do |name|
-        puts "#{name.name} - #{name.dates}"
-      end 
-    end 
    
     def astro_planets
       input = ""
       puts "Enter the name of your sign:"
       input = gets.strip
-        Scraper.scrape_planet_deets(input)
-      Sign.all.each do |name|
-        puts "#{name.name} - #{name.dates}"
-      end 
+      Scraper.scrape_planet_deets(planet)
+        puts planet.details 
     end 
 end 
 

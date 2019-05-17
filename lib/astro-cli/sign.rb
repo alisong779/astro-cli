@@ -10,6 +10,10 @@ class Sign
     @@all 
   end 
   
+   def self.find_by_name(name)
+    Sign.all.find {|p| name == p.name}
+  end 
+  
   #each instance needs to know its planet, dates and traits
   #each sign belongs to a planet
   

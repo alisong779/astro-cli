@@ -7,7 +7,7 @@ class Scraper
       
     doc.css(".zodiac-101-links")[0].css(".grid-new.grid-4")[0].css("a").each do |sign|
       new_sign = Sign.new 
-      new_sign.name = sign.text.strip 
+      new_sign.name = sign.text.strip.split(" ")[0] 
       new_sign.url = sign.attribute("href").value.strip
     end 
       
