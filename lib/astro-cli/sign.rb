@@ -11,7 +11,7 @@ class Sign
   end 
   
    def self.find_by_name(name)
-    Sign.all.find {|p| name == p.name}
+    Sign.all.find {|s| name == s.name}        #call planet?
   end 
   
   def scrape_traits(sign)
