@@ -34,16 +34,19 @@ class CLI
       end 
     end 
   end 
-  
     
   def sign_details 
     list_signs
     puts "Please type the number of your sign:"
-    input = gets.strip.to_i 
-    sign = Sign.all[input-1]
-    Scraper.scrape_sign_traits(sign) if sign.traits == nil 
-    print_sign(sign) 
-    sub_menu
+    input = gets.strip.to_i
+    if (1..11).include?(input)
+      sign = Sign.all[input-1]
+      Scraper.scrape_sign_traits(sign) if sign.traits == nil 
+      print_sign(sign) 
+      sub_menu
+    else 
+      puts "Please enter a valid selection!".red
+    end
   end 
  
   def print_sign(sign)
@@ -71,9 +74,13 @@ class CLI
     list_planets
     puts "Please type the number of your planet:"
     input = gets.strip.to_i
-    planet = Planet.all[input-1]
-    Scraper.scrape_planet_deets(planet) if planet.details == nil
-    print_planet_details(planet)
+    if (1..11).include?(input)
+      planet = Planet.all[input-1]
+      Scraper.scrape_planet_deets(planet) if planet.details == nil
+      print_planet_details(planet)
+    else 
+      puts "Please enter a valid selection!".red
+    end 
   end 
     
   def print_planet_details(planet)
