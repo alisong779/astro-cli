@@ -14,6 +14,12 @@ class Sign
     Sign.all.find {|p| name == p.name}
   end 
   
+  def scrape_traits(sign)
+    Scraper.scrape_sign_traits(sign)
+    Sign.all.each do |sign|
+        puts "#{sign.name} traits: #{sign.traits}" 
+      end
+  end 
   
   #each instance needs to know its planet, dates and traits
   #each sign belongs to a planet
