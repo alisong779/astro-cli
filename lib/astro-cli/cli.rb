@@ -43,8 +43,7 @@ class CLI
     sign = Sign.all[input-1]
     Scraper.scrape_sign_traits(sign) if sign.traits == nil 
     print_sign(sign) 
-    sub_menu 
-#need to factor in an incorrect entry here (input needs to be 1 - 12 only)
+    sub_menu
   end 
  
   def print_sign(sign)
@@ -72,13 +71,9 @@ class CLI
     list_planets
     puts "Please type the number of your planet:"
     input = gets.strip.to_i
-      if input == 1..11
-        planet = Planet.all[input-1]
-        Scraper.scrape_planet_deets(planet) if planet.details == nil
-        print_planet_details(planet)
-      else 
-        puts "Please enter a valid selection:".red 
-      end 
+    planet = Planet.all[input-1]
+    Scraper.scrape_planet_deets(planet) if planet.details == nil
+    print_planet_details(planet)
   end 
     
   def print_planet_details(planet)
@@ -86,14 +81,13 @@ class CLI
       #{planet.details}".green
   end 
       
-    
   def sub_menu
     input = nil 
       puts " "
       puts  "Enter your selection:"
-      puts  "1.To see your Planet Details"  
-      puts  "2.Go back to Main Menu"
-      puts  "3.Exit"
+      puts  "1.To learn about the Planet that rules your life, enter '1'"  
+      puts  "2.To go back to the Main Menu, enter '2'"
+      puts  "3.To Exit, enter '3'"
       puts " "
         
       input = gets.strip.to_i
