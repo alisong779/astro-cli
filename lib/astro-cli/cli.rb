@@ -4,7 +4,7 @@ class CLI
     input = ""
     puts "Hello There! Welcome to your Astrology Source!".blue
     Scraper.scrape_signs_and_planets
-    
+    menu 
   end 
   
   def menu
@@ -21,11 +21,11 @@ class CLI
     input = gets.strip.to_i 
   
     if input == 4
-      puts "See ya later!"
+      puts "See ya later!".blue 
       exit 
       
     elsif input == 1
-        astro_signs
+        list_signs
       elsif input == 2
         astro_traits
       elsif input == 3
@@ -38,33 +38,37 @@ class CLI
   
     
   def astro_traits
+    #needs to list all signs 
+    #ask for input to select sign
+    #call on the scraped traits for the sign entered 
+    #submenu 
       input = " "
       puts "Please type the name of your sign:"
-      Sign.all.each_with_index(1) do |index, sign|
-          puts "#{index}. #{sign}"
-        end
       input = gets.strip
       sign = input 
       Sign.scrape_traits(sign) 
-      submenu
+      sub_menu
     end 
  
     
-    def astro_signs
-    Sign.all.each do |name|
-      puts "#{name.name} - #{name.dates}"           #need dates from sign traits scraper 
+    def list_signs
+    Sign.all.each_with_index(1) do |index, sign|
+      puts "#{index} - #{sign.name} - #{sign.dates}"           #need to add dates from sign traits scraper 
     end 
   end 
    
     def astro_planets
       input = ""
-      Sign.all.each_with_index(1) do |index, sign|
-          puts "#{index}. #{sign}"
       puts "Enter the name of your sign:"
       input = gets.strip
       name = input 
       Sign.find_by_name(name)
-     
+      
+      #need to call on the sign planet then planet details
     end 
+    
+    def sub_menu
+      
+      
 end 
 
