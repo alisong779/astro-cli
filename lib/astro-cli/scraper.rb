@@ -25,7 +25,6 @@ class Scraper
     sign.dates = doc.css(".body")[0].css("p")[1].children[1].text.strip
     name = doc.css(".body")[0].css("p")[1].children[13].text.split(",")[0].strip
     sign.planet = Planet.find_by_name(name)
-    binding.pry 
   end
     
   def self.scrape_planet_deets(planet)

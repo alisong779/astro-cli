@@ -51,10 +51,10 @@ class CLI
  
   def print_sign(sign)
     puts "Sign Details:
-      #{sign.name}
-      #{sign.dates}
-      #{sign.traits}
-      #{sign.planet}".green
+      Sign Name: #{sign.name}
+      Sign Dates: #{sign.dates}
+      Sign Traits: #{sign.traits}
+      Sign Planet: #{sign.planet.name}".green
   end 
     
   def list_signs
