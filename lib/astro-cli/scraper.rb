@@ -30,6 +30,7 @@ class Scraper
   def self.scrape_planet_deets(planet)
     html = open(planet.url)
     doc = Nokogiri::HTML(html)
-    planet.details = doc.css(".body").css("p")[0].children[0].text 
+    planet.details = doc.css(".body").css("p")[0..1].text.split("\n").join
+    # .children[1].text 
   end 
 end 

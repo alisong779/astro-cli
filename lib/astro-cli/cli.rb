@@ -55,7 +55,7 @@ class CLI
       #{sign.dates}
       #{sign.traits}
       #{sign.planet}
-      ".blue
+      ".green
   end 
     
   def list_signs
