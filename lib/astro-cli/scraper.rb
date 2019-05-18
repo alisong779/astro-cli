@@ -21,7 +21,7 @@ class Scraper
   def self.scrape_sign_traits(sign)
     html = open(sign.url)
     doc = Nokogiri::HTML(html)
-    sign.traits = doc.css(".body")[0].css("p")[3].text 
+    sign.traits = doc.css(".body")[0].css("p")[3..4].text 
     sign.dates = doc.css(".body")[0].css("p")[1].children[1].text.strip
     name = doc.css(".body")[0].css("p")[1].children[13].text.split(",")[0].strip
     sign.planet = Planet.find_by_name(name)
@@ -34,3 +34,5 @@ class Scraper
     # .children[1].text 
   end 
 end 
+
+#Notes: scraper returns undefined method name for sign 2, 4, 5, 7, 9,  traits

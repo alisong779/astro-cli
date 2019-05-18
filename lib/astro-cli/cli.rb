@@ -39,7 +39,7 @@ class CLI
     list_signs
     puts "Please type the number of your sign:"
     input = gets.strip.to_i
-    if (1..11).include?(input)
+    if (1..12).include?(input)
       sign = Sign.all[input-1]
       Scraper.scrape_sign_traits(sign) if sign.traits == nil 
       print_sign(sign) 
