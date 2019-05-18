@@ -2,7 +2,7 @@ class CLI
  
   def run 
     input = ""
-    puts "Hello There! Welcome to your Astrology Source!".blue
+    puts "Hello There! Welcome to your Astrology Source!".cyan
     Scraper.scrape_signs_and_planets
     menu 
   end 
@@ -20,7 +20,7 @@ class CLI
     
       input = gets.strip.to_i 
       if input == 4
-        puts "See ya later!".blue 
+        puts "See ya later!".cyan 
         exit 
       
       elsif input == 1
@@ -50,12 +50,11 @@ class CLI
   end 
  
   def print_sign(sign)
-    puts "Sign Details: 
+    puts "Sign Details:
       #{sign.name}
       #{sign.dates}
       #{sign.traits}
-      #{sign.planet}
-      ".green
+      #{sign.planet}".green
   end 
     
   def list_signs
