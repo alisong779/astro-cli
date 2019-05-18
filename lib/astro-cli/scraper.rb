@@ -35,4 +35,5 @@ class Scraper
   end 
 end 
 
-#Notes: scraper returns undefined method name for sign 2, 4, 5, 7, 9,  traits
+#Notes: scraper returns undefined method 'name' for sign 2, 4, 5, 7 traits
+#       undefined method 'text' for sign 9 traits 
