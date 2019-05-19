@@ -21,9 +21,12 @@ Or install it yourself as:
     $ gem install astro-cli
 
 ## Usage
+You will need to install the following gems:
 
 gem install 'nokogiri'
+
 gem install 'open-uri'
+
 gem install 'colorize'
 
 ## Development
