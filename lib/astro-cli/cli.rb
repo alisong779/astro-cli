@@ -53,13 +53,13 @@ class CLI
     puts "Sign Details:
       Sign Name: #{sign.name}
       Sign Dates: #{sign.dates}
-      Sign Traits: #{sign.traits}
-      Sign Planet: #{sign.planet.name}".green
+      Sign Planet: #{sign.planet.name}
+      Sign Traits: #{sign.traits}".green
   end 
     
   def list_signs
     Sign.all.each.with_index(1) do |sign, index|
-      puts "#{index} - #{sign.name}"          
+      puts "#{index} - #{sign.name}".green          
     end 
   end 
     
@@ -76,6 +76,7 @@ class CLI
     if (1..11).include?(input)
       planet = Planet.all[input-1]
       Scraper.scrape_planet_deets(planet) if planet.details == nil
+      puts "Planet Details:"
       print_planet_details(planet)
     else 
       puts "Please enter a valid selection!".red
