@@ -65,7 +65,7 @@ class CLI
     
   def list_planets
     Planet.all.each.with_index(1) do |planet, index|
-      puts "#{index} - #{planet.name}"
+      puts "#{index} - #{planet.name}".green 
     end
   end 
     
@@ -76,7 +76,6 @@ class CLI
     if (1..11).include?(input)
       planet = Planet.all[input-1]
       Scraper.scrape_planet_deets(planet) if planet.details == nil
-      puts "Planet Details:"
       print_planet_details(planet)
     else 
       puts "Please enter a valid selection!".red
