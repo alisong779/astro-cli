@@ -1,8 +1,8 @@
 # Astro::Cli
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/astro/cli`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to the Astrology Source! This CLI scrapes the web site astrology.com for lists and details on all astrological signs and their planets. 
+It allows the users to see a list of astrological signs, all of the details associated with their sign and/or the details associated with 
+the planet that rules their sign.
 
 ## Installation
 
@@ -22,7 +22,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+gem install 'nokogiri'
+gem install 'open-uri'
+gem install 'colorize'
 
 ## Development
 
