@@ -14,7 +14,7 @@ class CLI
       "
       puts "1. To see a list of Astrological Signs, enter '1'."
       puts "2. To learn all of the details of your Astrological Sign, enter '2'."
-      puts "3. To learn about the planet that rules your life, type '3'."
+      puts "3. To learn about the planet that rules your life, enter '3'."
       puts "4. To exit, type '4'"
       puts "What would you like to do?"
     

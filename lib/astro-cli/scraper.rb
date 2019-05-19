@@ -31,9 +31,17 @@ class Scraper
     html = open(planet.url)
     doc = Nokogiri::HTML(html)
     planet.details = doc.css(".body").css("p")[0..1].text.split("\n").join
-    # .children[1].text 
   end 
 end 
+
+
+
+
+
+
+
+
+
 
 #Notes: scraper returns undefined method 'name' for sign 2, 4, 5, 7 traits
 #       undefined method 'text' for sign 9 traits 
