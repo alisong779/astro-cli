@@ -14,7 +14,7 @@ class CLI
       "
       puts "1. To see a list of Astrological Signs, enter '1'."
       puts "2. To learn all of the details of your Astrological Sign, enter '2'."
-      puts "3. To learn about the planet that rules your life, enter '3'."
+      puts "3. To see a list of planets, enter '3'."
       puts "4. To exit, type '4'"
       puts "What would you like to do?"
     
@@ -39,14 +39,15 @@ class CLI
     list_signs
     puts "Please type the number of your sign:"
     input = gets.strip.to_i
-    if (1..12).include?(input)
-      sign = Sign.all[input-1]
-      Scraper.scrape_sign_traits(sign) if sign.traits == nil 
-      print_sign(sign) 
-      sub_menu
-    else 
+    until (1..12).include?(input)
       puts "Please enter a valid selection!".red
-    end
+      puts "Please type the number of your sign:"
+      input = gets.strip.to_i
+    end   
+    sign = Sign.all[input-1]
+    Scraper.scrape_sign_traits(sign) if sign.traits == nil 
+    print_sign(sign) 
+    sub_menu(sign)
   end 
  
   def print_sign(sign)
@@ -87,7 +88,7 @@ class CLI
       #{planet.details}".green
   end 
       
-  def sub_menu
+  def sub_menu(sign)
     input = nil 
       puts " "
       puts  "Enter your selection:"
@@ -98,7 +99,8 @@ class CLI
         
       input = gets.strip.to_i
         if input == 1 
-          planet_details 
+          Scraper.scrape_planet_deets(sign.planet) if sign.planet.details == nil
+          print_planet_details(sign.planet) 
         elsif input == 2 
           menu 
         elsif input == 3
